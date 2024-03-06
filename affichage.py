@@ -1,4 +1,5 @@
 from tkinter import *
+import time
 
 def clear():
     """
@@ -94,8 +95,7 @@ def onButtonClick(row, column):
     clickedButton = button[column][row]
     if clickedButton['text'] == "":
         clickedButton.config(text=currentPlayer)
-    if verification(row, column):
-        window.destroy()
+    verification(row, column)
     switch_player()
 
 def drawGrid():
@@ -129,6 +129,7 @@ window.config(background='#515A5A')
 window.grid_columnconfigure(1, weight=1)
 window.grid_columnconfigure(2, weight=1)
 window.grid_columnconfigure(3, weight=1)
-drawGrid()
+
+menu()
 
 window.mainloop()
